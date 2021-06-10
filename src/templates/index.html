@@ -10,14 +10,22 @@
     <title>Nomnom Pickup</title>
   </head>
   <body>
+    <a href="#maincontent" class="skip-link">Go to main content</a>
     <header class="header">
       <h1 class="header__title main-title">Nomnom</h1>
       <nav id="drawer" class="header-nav">
         <ul class="header-nav__list">
-          <li class="header-nav__item">Home</li>
-          <li class="header-nav__item">Today Pickup</li>
-          <li class="header-nav__item">Restaurant</li>
-          <li class="header-nav__item">About Us</li>
+          <li class="header-nav__item"><a href="/" tabindex="1">Home</a></li>
+          <li class="header-nav__item">
+            <a href="#recommendation">Today Pickup</a>
+          </li>
+          <li class="header-nav__item"><a href="#restaurant">Restaurant</a></li>
+          <li class="header-nav__item">
+            <a href="#">Favorite</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="https://www.linkedin.com/in/annisatahira/">About Us</a>
+          </li>
         </ul>
       </nav>
       <!-- For Mobile -->
@@ -30,98 +38,32 @@
         <img src="/images/heros/hero-image_2.jpg" />
         <div class="hero-inner">
           <span class="hero-inner__title">NomNom Today</span>
-          <h1 class="hero-inner__question">What You Craving ?</h1>
-          <button class="hero-inner__btn">Pick Me!</button>
+          <h1 class="hero-inner__question">Find Recommended Restaurant Here</h1>
+          <a
+            href="#recommendation"
+            class="hero-inner__link"
+            aria-label="find recommended restaurant by clicking here"
+            >Check This Out!</a
+          >
         </div>
       </div>
     </div>
-    <main>
+    <main id="maincontent">
       <article class="about">
         <div class="container">
           <h1 class="section-title about__title">Our Value</h1>
           <div class="about-list"></div>
         </div>
       </article>
-      <section class="featured">
+      <section id="recommendation" class="featured">
         <div class="container">
           <h1 class="section-title featured__title">Today Pickup</h1>
           <div class="featured-list"></div>
         </div>
       </section>
-      <section class="product container">
+      <section id="restaurant" class="product container">
         <h1 class="section-title">Restaurant</h1>
-        <div class="product-list">
-          <!-- <article class="product-item">
-            <img
-              class="product-item__thumbnail"
-              src="/images/heros/hero-image_4.jpg"
-            />
-            <div class="product-item__description">
-              <h1>Pangsit Express</h1>
-              <div class="product-item__info">
-                <p class="product-item__city">
-                  <i class="fa fa-map-marker fa-icon" aria-hidden="true"></i
-                  >Bogor
-                </p>
-                <p class="product-item__rating">
-                  <i class="fa fa-star fa-icon" aria-hidden="true"></i>4.5
-                </p>
-              </div>
-            </div>
-          </article>
-          <article class="product-item">
-            <img
-              class="product-item__thumbnail"
-              src="/images/heros/hero-image_2.jpg"
-            />
-            <div class="product-item__description">
-              <h1>Pangsit Express</h1>
-              <div class="product-item__info">
-                <p class="product-item__city">Bogor</p>
-                <p class="product-item__rating">4.5</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-item">
-            <img
-              class="product-item__thumbnail"
-              src="/images/heros/hero-image_1.jpg"
-            />
-            <div class="product-item__description">
-              <h1>Pangsit Express</h1>
-              <div class="product-item__info">
-                <p class="product-item__city">Bogor</p>
-                <p class="product-item__rating">4.5</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-item">
-            <img
-              class="product-item__thumbnail"
-              src="/images/heros/hero-image_4.jpg"
-            />
-            <div class="product-item__description">
-              <h1>Pangsit Express</h1>
-              <div class="product-item__info">
-                <p class="product-item__city">Bogor</p>
-                <p class="product-item__rating">4.5</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-item">
-            <img
-              class="product-item__thumbnail"
-              src="/images/heros/hero-image_3.jpg"
-            />
-            <div class="product-item__description">
-              <h1>Pangsit Express</h1>
-              <div class="product-item__info">
-                <p class="product-item__city">Bogor</p>
-                <p class="product-item__rating">4.5</p>
-              </div>
-            </div>
-          </article> -->
-        </div>
+        <div class="product-list"></div>
       </section>
     </main>
     <footer>
@@ -129,34 +71,42 @@
         <div class="footer-description">
           <h1 class="footer-description__title main-title">NomNom</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor.
+            Finding a good place where you can savor good food and enjoy the
+            food with a breathtaking view, here we pick the best out of the best
           </p>
         </div>
         <div class="footer-featured">
           <div class="footer-menu">
             <h1 class="footer-menu__title">NomNom</h1>
             <ul>
-              <li class="footer-menu__item"><a href="#">Home</a></li>
-              <li class="footer-menu__item"><a href="#">Today Pickup</a></li>
-              <li class="footer-menu__item"><a href="#">Restaurant</a></li>
-              <li class="footer-menu__item"><a href="#">About Us</a></li>
+              <li class="footer-menu__item"><a href="/">Home</a></li>
+              <li class="footer-menu__item">
+                <a href="#recommendation">Today Pickup</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#restaurant">Restaurant</a>
+              </li>
             </ul>
           </div>
           <div class="footer-menu">
-            <h1 class="footer-menu__title">NomNom</h1>
+            <h1 class="footer-menu__title">Developer contact</h1>
             <ul>
-              <li class="footer-menu__item"><a href="#">Home</a></li>
-              <li class="footer-menu__item"><a href="#">Today Pickup</a></li>
-              <li class="footer-menu__item"><a href="#">Restaurant</a></li>
-              <li class="footer-menu__item"><a href="#">About Us</a></li>
+              <li class="footer-menu__item">
+                <a href="https://github.com/annisatahira">Github</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="https://www.linkedin.com/in/annisatahira/">Linkedin</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="https://www.instagram.com/annisatahira/">Instagram</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-copyrights">
         <div class="container">
-          <h1 class="footer-copyrights__title">© 2020 - NomNom App</h1>
+          <h1 class="footer-copyrights__title">© 2021 - NomNom App</h1>
         </div>
       </div>
     </footer>

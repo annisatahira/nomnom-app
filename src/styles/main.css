@@ -88,6 +88,10 @@ footer {
   text-decoration: none;
 }
 
+.footer-menu__item a:hover {
+  color: #f58634;
+}
+
 .footer-copyrights {
   background-color: #1b1a17;
 }
@@ -136,8 +140,34 @@ footer {
   }
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 9999;
+  text-decoration: none;
+  border: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+a:focus {
+  border: 1px solid #000;
+}
+
 @media screen and (min-width: 1024px) {
   .container {
     margin: 0 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: 0 10rem;
   }
 }
