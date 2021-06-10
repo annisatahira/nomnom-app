@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import "./components/header.css";
+@import "./components/hero.css";
+@import "./components/about.css";
+@import "./components/featured.css";
+@import "./components/product.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Balsamiq Sans", cursive;
+  position: relative;
+  font-size: 14px;
+}
+
+.container {
+  margin: 0 1rem;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: 28px;
+  text-align: center;
+}
+
+.main-title {
+  font-family: "Satisfy", cursive;
+  font-size: 28px;
+}
+
+footer {
+  background-color: #393e46;
+  color: #fff;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.footer__inner {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-description {
+  width: 100%;
+  line-height: 32px;
+}
+
+.footer-description__title {
+  padding: 1.5rem 0;
+  color: #fff;
+}
+
+.footer-featured {
+  width: 100%;
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+.footer-menu:last-child {
+  margin-left: 3rem;
+}
+
+.footer-menu__item {
+  list-style-type: none;
+  line-height: 48px;
+}
+
+.footer-menu__title {
+  margin-bottom: 1.5rem;
+  font-size: 18px;
+}
+.footer-menu__item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-copyrights {
+  background-color: #1b1a17;
+}
+
+.footer-copyrights__title {
+  font-size: 14px;
+  padding: 1rem 0;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    margin: 0 10rem;
+  }
+
+  .footer-menu__item {
+    line-height: 36px;
+  }
+
+  .footer__inner {
+    flex-direction: row;
+  }
+
+  .footer-description {
+    margin-right: 2rem;
+    width: 40%;
+    line-height: 28px;
+  }
+
+  .footer-featured {
+    width: 60%;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+}

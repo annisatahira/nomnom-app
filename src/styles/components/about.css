@@ -1,0 +1,38 @@
+.about {
+  background-color: #fdfaf6;
+  padding: 2rem 0;
+}
+
+.about__title {
+  margin-bottom: 2rem;
+}
+
+.about-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.about-item img {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.about-item__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+  .about-list {
+    grid-template-columns: repeat(1, 4fr);
+  }
+}
