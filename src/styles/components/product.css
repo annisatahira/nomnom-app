@@ -11,7 +11,15 @@
 .product-item {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  min-height: 300px;
+}
+
+.product-item__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-height: 24px;
 }
 
 .product-item__info {

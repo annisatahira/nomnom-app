@@ -12,7 +12,7 @@ class ProductItem extends HTMLElement {
           src=${this._data.pictureId}
         />
         <div class="product-item__description">
-          <h1>${this._data.name}</h1>
+          <h1 class="product-item__title">${this._data.name}</h1>
           <div class="product-item__info">
             <p class="product-item__city">
               <i class="fa fa-map-marker fa-icon" aria-hidden="true"></i
