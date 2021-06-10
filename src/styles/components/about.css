@@ -1,6 +1,6 @@
 .about {
   background-color: #fdfaf6;
-  padding: 2rem 0;
+  padding: 2.5rem;
 }
 
 .about__title {
@@ -31,8 +31,14 @@
   font-weight: 700;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .about-list {
-    grid-template-columns: repeat(1, 4fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about-list {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
