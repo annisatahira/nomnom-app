@@ -34,6 +34,19 @@
   font-size: 24px;
 }
 
+#drawer.open {
+  display: block;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #83a95c;
+  width: 100%;
+  border-radius: 10px;
+  padding: 19px;
+  top: 110%;
+  left: 0;
+}
+
 .header-nav {
   width: 80%;
   text-align: right;
@@ -43,6 +56,9 @@
 
 .header-nav__list {
   margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .header-nav__item {
@@ -56,6 +72,26 @@
 @media screen and (min-width: 768px) {
   #drawer-mobile {
     display: none;
+  }
+
+  .header-nav {
+    width: 80%;
+    text-align: right;
+    font-weight: 700;
+    display: none;
+  }
+
+  .header-nav__list {
+    display: block;
+    text-align: right;
+  }
+
+  .header-nav__item {
+    padding: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 14px;
   }
 
   .header__title {
