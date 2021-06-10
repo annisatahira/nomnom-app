@@ -1,18 +1,18 @@
 const aboutData = [
   {
-    image: "/icons/nomnom-1.svg",
+    image: "icons/nomnom-1.svg",
     title: "Healthy Restaurant",
   },
   {
-    image: "/icons/nomnom-2.svg",
+    image: "icons/nomnom-2.svg",
     title: "Today Recommendation",
   },
   {
-    image: "/icons/nomnom-3.svg",
+    image: "icons/nomnom-3.svg",
     title: "Recommended Food",
   },
   {
-    image: "/icons/nomnom-4.svg",
+    image: "icons/nomnom-4.svg",
     title: "Proffesional Chef",
   },
 ];
