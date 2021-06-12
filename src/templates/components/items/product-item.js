@@ -13,15 +13,19 @@ class ProductItem extends HTMLElement {
           alt=${this._data.name}
           aria-hidden="true"
         />
-        <div class="product-item__description">
+        <div class="product-item__content">
           <h1 class="product-item__title" aria-label="restaurant's name is ${this._data.name}">${this._data.name}</h1>
-          <div class="product-item__info">
-            <p class="product-item__city" aria-label="from ${this._data.city}">
-              <i class="fa fa-map-marker fa-icon" aria-hidden="true"></i
-              >${this._data.city}
-            </p>
-            <p class="product-item__rating" aria-label="rating ${this._data.rating}">
-              <i class="fa fa-star fa-icon" aria-hidden="true"></i>${this._data.rating}
+          <div>
+            <div class="product-item__info">
+              <p class="product-item__city" aria-label="from ${this._data.city}">
+                <i class="fa fa-map-marker fa-icon" aria-hidden="true"></i>${this._data.city}
+              </p>
+              <p class="product-item__rating" aria-label="rating ${this._data.rating}">
+                <i class="fa fa-star fa-icon" aria-hidden="true"></i>${this._data.rating}
+              </p>
+            </div>
+            <p class="product-item__description">
+              ${this._data.description}
             </p>
           </div>
         </div>

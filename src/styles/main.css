@@ -39,7 +39,7 @@ body {
 
 .main-title {
   font-family: "Chewy", cursive;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 footer {
@@ -47,6 +47,11 @@ footer {
   color: #fff;
   width: 100%;
   padding-top: 20px;
+}
+
+a {
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .footer__inner {
@@ -107,13 +112,22 @@ footer {
   color: #f58634;
 }
 
+#hamburger .fa {
+  font-size: 52px;
+}
+
 @media screen and (min-width: 768px) {
+  .main-title {
+    font-family: "Chewy", cursive;
+    font-size: 45px;
+  }
+
   .container {
     margin: 0 3rem;
   }
 
   .footer-menu__item {
-    line-height: 36px;
+    line-height: 45px;
   }
 
   .footer__inner {
@@ -157,7 +171,7 @@ footer {
   top: 0;
 }
 
-a:focus {
+.skip-lin a:focus {
   border: 1px solid #000;
 }
 

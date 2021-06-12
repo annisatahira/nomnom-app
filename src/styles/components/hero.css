@@ -31,7 +31,7 @@
 }
 
 .hero-inner__question {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0 2.5rem 0;
 }
 
@@ -50,7 +50,7 @@
 
 @media screen and (min-width: 768px) {
   .hero__figure img {
-    height: 650px;
+    height: 750px;
   }
 
   .hero-inner__title {

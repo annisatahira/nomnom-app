@@ -13,6 +13,11 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
+.product-item__title,
+.product-item__info {
+  margin-bottom: 0.5rem;
+}
+
 .product-item__title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -39,9 +44,18 @@
   text-align: right;
 }
 
-.product-item__description {
+.product-item__content {
   padding: 0.7rem;
   line-height: 24px;
+}
+
+.product-item__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-height: 26px;
 }
 
 @media screen and (min-width: 768px) {

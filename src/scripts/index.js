@@ -11,9 +11,19 @@ import data from "../data/DATA.json";
 
 const drawerMobileElement = document.querySelector("#hamburger");
 const drawerElement = document.querySelector("#drawer");
+const faToggleElement = document.querySelector("#fa-toggle");
 
 drawerMobileElement.addEventListener("click", (event) => {
   drawerElement.classList.toggle("open");
+  // check if toggle is open
+  if (drawerElement.classList.contains("open")) {
+    faToggleElement.classList.remove("fa-bars");
+    faToggleElement.classList.add("fa-close");
+  } else {
+    faToggleElement.classList.remove("fa-close");
+    faToggleElement.classList.add("fa-bars");
+  }
+
   event.stopPropagation();
 });
 

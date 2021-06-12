@@ -11,7 +11,7 @@
 .featured-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .featured-item {
@@ -68,7 +68,6 @@
 
   .featured-list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
   }
 
   .featured-item__thumbnail {
@@ -78,13 +77,13 @@
   .featured-item__content {
     top: 75%;
   }
-
-  .featured-item__description {
-    line-height: 20px;
-  }
 }
 
 @media screen and (min-width: 1200px) {
+  .featured-list {
+    gap: 2rem;
+  }
+
   .featured-item__thumbnail {
     height: 250px;
   }
