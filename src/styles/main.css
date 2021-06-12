@@ -50,8 +50,9 @@ footer {
 }
 
 a {
-  font-size: 18px;
   line-height: 26px;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .footer__inner {
@@ -92,6 +93,8 @@ a {
 .footer-menu__item a {
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .footer-menu__item a:hover {
@@ -112,18 +115,10 @@ a {
   color: #f58634;
 }
 
-#hamburger .fa {
-  font-size: 52px;
-}
-
-#hamburger .fa-close {
-  font-size: 58px;
-}
-
 @media screen and (min-width: 768px) {
   .main-title {
     font-family: "Chewy", cursive;
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .container {
