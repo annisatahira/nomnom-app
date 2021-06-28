@@ -21,12 +21,12 @@
 }
 
 #drawer-mobile {
-  width: 80%;
-  text-align: right;
+  width: 30%;
+  text-align: left;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 8px;
+  justify-content: flex-start;
+  padding-left: 29px;
 }
 
 #hamburger {
