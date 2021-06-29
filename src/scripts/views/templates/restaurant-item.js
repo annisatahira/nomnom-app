@@ -16,7 +16,9 @@ class RestaurantItem extends HTMLElement {
             aria-hidden="true"
           />
           <div class="restaurant-item__content">
-            <h1 class="restaurant-item__title" aria-label="restaurant's name is ${this._restaurant.name}">${this._restaurant.name}</h1>
+            <h1 class="restaurant-item__title" aria-label="restaurant's name is ${this._restaurant.name}">
+              <a href="${`/#/detail/${this._restaurant.id}`}">${this._restaurant.name}</a>
+            </h1>
             <div>
               <div class="restaurant-item__info">
                 <p class="restaurant-item__city" aria-label="from ${this._restaurant.city}">
@@ -27,7 +29,7 @@ class RestaurantItem extends HTMLElement {
                 </p>
               </div>
               <p class="restaurant-item__description">
-                test ${this._restaurant.description}
+                ${this._restaurant.description}
               </p>
             </div>
           </div>

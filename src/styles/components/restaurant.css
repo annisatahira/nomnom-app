@@ -58,20 +58,15 @@
   line-height: 26px;
 }
 
-.restaurant-featured {
-  row-gap: 2rem;
-  padding-top: 20px;
+.restaurant-item__title a {
+  text-decoration: none;
+  color: #000;
 }
 
 @media screen and (min-width: 768px) {
   .restaurant-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-  }
-
-  .restaurant-featured {
-    row-gap: 2rem;
-    margin-bottom: 2rem;
   }
 }
 

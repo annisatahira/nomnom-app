@@ -25,7 +25,9 @@ class FeaturedItem extends HTMLElement {
             <i class="fa fa-star fa-icon" aria-hidden="true"></i>${this._featured.rating}
           </p>
         </div>
-        <h1 class="featured-item__title" aria-label="restaurant's name is ${this._featured.name}">${this._featured.name}</h1>
+        <h1 class="featured-item__title" aria-label="restaurant's name is ${this._featured.name}">
+          <a href="${`/#/detail/${this._featured.id}`}"> ${this._featured.name}</a>  
+        </h1>
         <p class="featured-item__description">
           ${this._featured.description}
         </p>

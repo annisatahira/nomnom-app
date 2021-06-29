@@ -13,7 +13,7 @@ const TodayPickup = {
         <div class="container">
           <div class="today-container">
             <h1 class="today-title">NomNom's Today Pickup</h1>
-            <div id="today-list" class="restaurant-list today-restaurant"></div>
+            <div id="today-list" class="today-restaurant"></div>
           </div>
         </div>
     `;
