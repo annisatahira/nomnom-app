@@ -1,11 +1,36 @@
+import RestaurantDBSource from '../../data/restaurantdb-source';
+import '../templates/featured-item';
+
 const TodayPickup = {
   async render() {
     return `
-        <h1>Today Pickup</h1>
+      <hero-item 
+          src="images/heros/hero-image_4.jpg"
+          alt="NomNom Today Hero Image"
+          title="NomNom Today"
+          subtitle="Find Best Restaurant for Eat Today"
+        ></hero-item>
+        <div class="container">
+          <div class="today-container">
+            <h1 class="today-title">NomNom's Today Pickup</h1>
+            <div id="today-list" class="restaurant-list today-restaurant"></div>
+          </div>
+        </div>
     `;
   },
 
-  async afterRender() {},
+  async afterRender() {
+    const todayContainer = document.querySelector('#today-list');
+
+    const restaurants = await RestaurantDBSource.allRestaurant();
+    const todayList = restaurants.slice(9, 20);
+
+    todayList.forEach((restaurant) => {
+      const todayItemElement = document.createElement('featured-item');
+      todayItemElement.featured = restaurant;
+      todayContainer.appendChild(todayItemElement);
+    });
+  },
 };
 
 export default TodayPickup;

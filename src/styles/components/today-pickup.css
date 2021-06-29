@@ -1,0 +1,22 @@
+.today-container {
+  margin-bottom: 5rem;
+}
+
+.today-title {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.today-restaurant {
+  row-gap: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .today-restaurant {
+    row-gap: 1rem;
+  }
+
+  .today-title {
+    font-size: 24px;
+  }
+}
