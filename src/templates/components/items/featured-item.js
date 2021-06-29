@@ -33,4 +33,4 @@ class FeaturedItem extends HTMLElement {
   }
 }
 
-customElements.define("featured-item", FeaturedItem);
+customElements.define('featured-item', FeaturedItem);

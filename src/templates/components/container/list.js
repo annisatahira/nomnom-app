@@ -6,7 +6,7 @@ class List {
   }
 
   render() {
-    this.data.forEach(item => {
+    this.data.forEach((item) => {
       const dataELement = document.createElement(this.listElement);
       dataELement.item = item;
       this.selector.appendChild(dataELement);

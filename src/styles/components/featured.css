@@ -11,7 +11,7 @@
 .featured-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .featured-item {
@@ -45,6 +45,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .featured-item__title {
@@ -63,11 +64,12 @@
 
 @media screen and (min-width: 768px) {
   .featured {
-    padding: 2rem 0 2rem 0;
+    padding: 2rem 0 4rem 0;
   }
 
   .featured-list {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .featured-item__thumbnail {
