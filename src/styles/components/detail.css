@@ -1,0 +1,98 @@
+.detail-item__thumbnail {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.detail-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.detail-category {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #393e46;
+}
+
+.detail-item__description {
+  line-height: 24px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.detail-item__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.detail-item__content,
+.detail-item__menu {
+  padding: 20px;
+  border-radius: 20px;
+  margin: 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #f9f9f9;
+}
+
+.detail-item__content {
+  background-color: #eeeeee;
+}
+
+.detail-item__image {
+  position: relative;
+  padding: 10px 0;
+}
+
+.detail-item__rating {
+  position: absolute;
+  bottom: 29px;
+  background: #f58634;
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.detail-item__rating .fa-icon {
+  color: white;
+}
+
+.detail-item__content .fa-icon {
+  color: #83a95c;
+  font-size: 20px;
+}
+
+.detail-item__menu-list {
+  line-height: 24px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.detail-title .fa-cutlery {
+  color: #83a95c;
+  margin-right: 10px;
+}
+
+.detail-item__info {
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 540px) {
+  .detail-content__menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .detail-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}

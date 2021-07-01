@@ -8,6 +8,7 @@
 @import './components/restaurant.css';
 @import './components/today-pickup.css';
 @import './components/detail.css';
+@import './components/review.css';
 
 * {
   padding: 0;
