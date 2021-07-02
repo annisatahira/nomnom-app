@@ -2,6 +2,7 @@ import RestaurantDBSource from '../../data/restaurantdb-source';
 import CONFIG from '../../globals/config';
 import arraySclicer from '../../utils/slice-helper';
 import '../components/featured-item';
+import createErrorView from '../components/error-view';
 
 const TodayPickup = {
   async render() {
@@ -27,19 +28,23 @@ const TodayPickup = {
     const loading = document.querySelector('loading-item');
     const todayContainer = document.querySelector('#today-list');
 
-    const restaurants = await RestaurantDBSource.allRestaurant();
-    const todayList = arraySclicer({
-      arrData: restaurants,
-      sliceFrom: 9,
-      sliceTo: 20,
-    });
-    loading.style.display = 'none';
+    try {
+      const restaurants = await RestaurantDBSource.allRestaurant();
+      const todayList = arraySclicer({
+        arrData: restaurants,
+        sliceFrom: 9,
+        sliceTo: 20,
+      });
+      loading.style.display = 'none';
 
-    todayList.forEach((restaurant) => {
-      const todayItemElement = document.createElement('featured-item');
-      todayItemElement.featured = restaurant;
-      todayContainer.appendChild(todayItemElement);
-    });
+      todayList.forEach((restaurant) => {
+        const todayItemElement = document.createElement('featured-item');
+        todayItemElement.featured = restaurant;
+        todayContainer.appendChild(todayItemElement);
+      });
+    } catch (error) {
+      todayContainer.innerHTML = createErrorView(error.message);
+    }
   },
 };
 

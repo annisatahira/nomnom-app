@@ -5,6 +5,7 @@ import '../components/featured-item';
 import '../components/restaurant-item';
 import CONFIG from '../../globals/config';
 import arraySclicer from '../../utils/slice-helper';
+import createErrorView from '../components/error-view';
 
 const Home = {
   async render() {
@@ -53,32 +54,38 @@ const Home = {
       aboutContainer.appendChild(aboutItemElement);
     });
 
-    // render restaurant list
-    const loading = document.querySelector('loading-item');
-    const restaurantList = await RestaurantDBSource.allRestaurant();
     const restaurantContainer = document.querySelector('#restaurants');
-    loading.style.display = 'none';
 
-    restaurantList.forEach((restaurant) => {
-      const restaurantItemElement = document.createElement('restaurant-item');
-      restaurantItemElement.restaurant = restaurant;
-      restaurantContainer.appendChild(restaurantItemElement);
-    });
+    // render restaurant list
+    try {
+      const loading = document.querySelector('loading-item');
+      const restaurantList = await RestaurantDBSource.allRestaurant();
 
-    // render featured restaurant
-    const featuredList = arraySclicer({
-      arrData: restaurantList,
-      sliceFrom: 2,
-      sliceTo: 5,
-    });
+      loading.style.display = 'none';
 
-    const featuredContainer = document.querySelector('#featured-list');
+      restaurantList.forEach((restaurant) => {
+        const restaurantItemElement = document.createElement('restaurant-item');
+        restaurantItemElement.restaurant = restaurant;
+        restaurantContainer.appendChild(restaurantItemElement);
+      });
 
-    featuredList.forEach((restaurant) => {
-      const featuredItemElement = document.createElement('featured-item');
-      featuredItemElement.featured = restaurant;
-      featuredContainer.appendChild(featuredItemElement);
-    });
+      // render featured restaurant
+      const featuredList = arraySclicer({
+        arrData: restaurantList,
+        sliceFrom: 2,
+        sliceTo: 5,
+      });
+
+      const featuredContainer = document.querySelector('#featured-list');
+
+      featuredList.forEach((restaurant) => {
+        const featuredItemElement = document.createElement('featured-item');
+        featuredItemElement.featured = restaurant;
+        featuredContainer.appendChild(featuredItemElement);
+      });
+    } catch (error) {
+      restaurantContainer.innerHTML = createErrorView(error.message);
+    }
   },
 };
 

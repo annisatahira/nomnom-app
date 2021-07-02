@@ -2,6 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDBSource from '../../data/restaurantdb-source';
 import '../components/detail-item';
 import '../components/review-item';
+import createErrorView from '../components/error-view';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -34,52 +35,57 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const loading = document.querySelector('loading-item');
-    const detail = await RestaurantDBSource.detailRestaurant(url.id);
-    loading.style.display = 'none';
-
     const detailContainer = document.querySelector('#detail');
-    const detailItemElement = document.createElement('detail-item');
-    detailItemElement.detail = detail.restaurant;
-    detailContainer.appendChild(detailItemElement);
 
-    // review
-    const reviewContainer = document.querySelector('#reviews');
-    detail.restaurant.customerReviews.forEach((review) => {
-      const reviewItemElement = document.createElement('review-item');
-      reviewItemElement.review = review;
-      reviewContainer.appendChild(reviewItemElement);
-    });
+    try {
+      const detail = await RestaurantDBSource.detailRestaurant(url.id);
+      loading.style.display = 'none';
 
-    const name = document.querySelector('#name');
-    const userReview = document.querySelector('#review');
-    const submitReview = document.querySelector('#reviewForm');
-    submitReview.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const review = {
-        id: url.id,
-        name: name.value,
-        review: userReview.value,
-      };
+      const detailItemElement = document.createElement('detail-item');
+      detailItemElement.detail = detail.restaurant;
+      detailContainer.appendChild(detailItemElement);
 
-      await RestaurantDBSource.postReview(review);
-      name.value = '';
-      userReview.value = '';
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
-    });
+      // review
+      const reviewContainer = document.querySelector('#reviews');
+      detail.restaurant.customerReviews.forEach((review) => {
+        const reviewItemElement = document.createElement('review-item');
+        reviewItemElement.review = review;
+        reviewContainer.appendChild(reviewItemElement);
+      });
 
-    LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
-        id: detail.restaurant.id,
-        name: detail.restaurant.name,
-        description: detail.restaurant.description,
-        pictureId: detail.restaurant.pictureId,
-        address: detail.restaurant.address,
-        rating: detail.restaurant.rating,
-        city: detail.restaurant.city,
-      },
-    });
+      const name = document.querySelector('#name');
+      const userReview = document.querySelector('#review');
+      const submitReview = document.querySelector('#reviewForm');
+      submitReview.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const review = {
+          id: url.id,
+          name: name.value,
+          review: userReview.value,
+        };
+
+        await RestaurantDBSource.postReview(review);
+        name.value = '';
+        userReview.value = '';
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      });
+
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        restaurant: {
+          id: detail.restaurant.id,
+          name: detail.restaurant.name,
+          description: detail.restaurant.description,
+          pictureId: detail.restaurant.pictureId,
+          address: detail.restaurant.address,
+          rating: detail.restaurant.rating,
+          city: detail.restaurant.city,
+        },
+      });
+    } catch (error) {
+      detailContainer.innerHTML = createErrorView(error.message);
+    }
   },
 };
 

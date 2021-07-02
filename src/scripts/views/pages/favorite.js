@@ -1,5 +1,6 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import '../components/restaurant-item';
+import createErrorView from '../components/error-view';
 
 const Favorite = {
   async render() {
@@ -22,21 +23,25 @@ const Favorite = {
 
   async afterRender() {
     const loading = document.querySelector('loading-item');
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-    const favoriteEmpty = document.querySelector('.favorite-empty-image');
-    loading.style.display = 'none';
+    const favoritesContainer = document.querySelector('#favorites');
+    try {
+      const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+      const favoriteEmpty = document.querySelector('.favorite-empty-image');
+      loading.style.display = 'none';
 
-    if (restaurants.length > 0) {
-      favoriteEmpty.style.display = 'none';
-      const favoritesContainer = document.querySelector('#favorites');
+      if (restaurants.length > 0) {
+        favoriteEmpty.style.display = 'none';
 
-      restaurants.forEach((restaurant) => {
-        const favoriteItemElement = document.createElement('restaurant-item');
-        favoriteItemElement.restaurant = restaurant;
-        favoritesContainer.appendChild(favoriteItemElement);
-      });
-    } else {
-      favoriteEmpty.style.display = 'block';
+        restaurants.forEach((restaurant) => {
+          const favoriteItemElement = document.createElement('restaurant-item');
+          favoriteItemElement.restaurant = restaurant;
+          favoritesContainer.appendChild(favoriteItemElement);
+        });
+      } else {
+        favoriteEmpty.style.display = 'block';
+      }
+    } catch (error) {
+      favoritesContainer.innerHTML = createErrorView(error.message);
     }
   },
 };
