@@ -4,13 +4,14 @@ import '../components/hero-item';
 import '../components/about-item';
 import '../components/featured-item';
 import '../components/restaurant-item';
+import CONFIG from '../../globals/config';
 
 const Home = {
   async render() {
     return `
     <div>
       <hero-item 
-        src="images/heros/hero-image_2.jpg"
+        src=${CONFIG.BANNER_HOME_IMAGE}
         alt="NomNom Today Hero Image"
         title="NomNom Today"
         subtitle="Find Recommended Restaurant Here"

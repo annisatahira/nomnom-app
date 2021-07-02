@@ -1,11 +1,12 @@
 import RestaurantDBSource from '../../data/restaurantdb-source';
+import CONFIG from '../../globals/config';
 import '../components/featured-item';
 
 const TodayPickup = {
   async render() {
     return `
       <hero-item 
-          src="images/heros/hero-image_4.jpg"
+          src=${CONFIG.BANNER_TODAY_PICKUP_IMAGE}
           alt="NomNom Today Hero Image"
           title="NomNom Today"
           subtitle="Find Best Restaurant for Eat Today"
