@@ -1,9 +1,9 @@
 import { aboutData } from '../../data/home';
 import RestaurantDBSource from '../../data/restaurantdb-source';
-import '../templates/hero-item';
-import '../templates/about-item';
-import '../templates/featured-item';
-import '../templates/restaurant-item';
+import '../components/hero-item';
+import '../components/about-item';
+import '../components/featured-item';
+import '../components/restaurant-item';
 
 const Home = {
   async render() {

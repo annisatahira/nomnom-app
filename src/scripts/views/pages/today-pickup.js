@@ -1,5 +1,5 @@
 import RestaurantDBSource from '../../data/restaurantdb-source';
-import '../templates/featured-item';
+import '../components/featured-item';
 
 const TodayPickup = {
   async render() {
