@@ -2,6 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDBSource from '../../data/restaurantdb-source';
 import '../templates/detail-item';
 import '../templates/review-item';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -24,6 +25,7 @@ const Detail = {
             <div id="reviews">
             </div>
           </section>
+          <div id="likeButtonContainer"></div>
         </div>
       `;
   },
@@ -31,7 +33,7 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const detail = await RestaurantDBSource.detailRestaurant(url.id);
-    console.log({ detail });
+
     const detailContainer = document.querySelector('#detail');
     const detailItemElement = document.createElement('detail-item');
     detailItemElement.detail = detail.restaurant;
@@ -61,6 +63,19 @@ const Detail = {
       userReview.value = '';
       // eslint-disable-next-line no-restricted-globals
       location.reload();
+    });
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: detail.restaurant.id,
+        name: detail.restaurant.name,
+        description: detail.restaurant.description,
+        pictureId: detail.restaurant.pictureId,
+        address: detail.restaurant.address,
+        rating: detail.restaurant.rating,
+        city: detail.restaurant.city,
+      },
     });
   },
 };
