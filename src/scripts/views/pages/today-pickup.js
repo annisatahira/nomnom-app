@@ -1,5 +1,6 @@
 import RestaurantDBSource from '../../data/restaurantdb-source';
 import CONFIG from '../../globals/config';
+import arraySclicer from '../../utils/slice-helper';
 import '../components/featured-item';
 
 const TodayPickup = {
@@ -27,7 +28,11 @@ const TodayPickup = {
     const todayContainer = document.querySelector('#today-list');
 
     const restaurants = await RestaurantDBSource.allRestaurant();
-    const todayList = await restaurants.slice(9, 20);
+    const todayList = arraySclicer({
+      arrData: restaurants,
+      sliceFrom: 9,
+      sliceTo: 20,
+    });
     loading.style.display = 'none';
 
     todayList.forEach((restaurant) => {

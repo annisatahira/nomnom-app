@@ -4,6 +4,7 @@ import '../components/about-item';
 import '../components/featured-item';
 import '../components/restaurant-item';
 import CONFIG from '../../globals/config';
+import arraySclicer from '../../utils/slice-helper';
 
 const Home = {
   async render() {
@@ -65,8 +66,12 @@ const Home = {
     });
 
     // render featured restaurant
-    const restaurantSlice = restaurantList;
-    const featuredList = restaurantSlice.slice(9, 12);
+    const featuredList = arraySclicer({
+      arrData: restaurantList,
+      sliceFrom: 2,
+      sliceTo: 5,
+    });
+
     const featuredContainer = document.querySelector('#featured-list');
 
     featuredList.forEach((restaurant) => {
