@@ -1,6 +1,5 @@
 import { aboutData } from '../../data/home';
 import RestaurantDBSource from '../../data/restaurantdb-source';
-import '../components/hero-item';
 import '../components/about-item';
 import '../components/featured-item';
 import '../components/restaurant-item';
@@ -36,6 +35,7 @@ const Home = {
         </section>
       <section id="restaurant" class="restaurant container">
         <h1 class="section-title">Restaurant</h1>
+        <loading-item></loading-item>
         <div id="restaurants" class="restaurant-list"></div>
       </section>
     </div>
@@ -53,8 +53,10 @@ const Home = {
     });
 
     // render restaurant list
+    const loading = document.querySelector('loading-item');
     const restaurantList = await RestaurantDBSource.allRestaurant();
     const restaurantContainer = document.querySelector('#restaurants');
+    loading.style.display = 'none';
 
     restaurantList.forEach((restaurant) => {
       const restaurantItemElement = document.createElement('restaurant-item');

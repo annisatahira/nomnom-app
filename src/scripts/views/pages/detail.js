@@ -8,6 +8,7 @@ const Detail = {
   async render() {
     return `
         <div class="container content">
+        <loading-item></loading-item>
           <section id="detail">
           </section>
           <section class="review-container">
@@ -32,7 +33,9 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const loading = document.querySelector('loading-item');
     const detail = await RestaurantDBSource.detailRestaurant(url.id);
+    loading.style.display = 'none';
 
     const detailContainer = document.querySelector('#detail');
     const detailItemElement = document.createElement('detail-item');

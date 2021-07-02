@@ -14,9 +14,7 @@ const TodayPickup = {
         <div class="container">
           <div class="today-container">
             <h1 class="today-title">NomNom's Today Pickup</h1>
-              <div class="loading">
-                <img src="loading.gif" />
-              </div>
+              <loading-item></loading-item>
             <div id="today-list" class="today-restaurant">
             </div>
           </div>
@@ -25,13 +23,13 @@ const TodayPickup = {
   },
 
   async afterRender() {
-    const loading = document.querySelector('.loading');
+    const loading = document.querySelector('loading-item');
     const todayContainer = document.querySelector('#today-list');
 
-    loading.style.display = 'block';
     const restaurants = await RestaurantDBSource.allRestaurant();
     const todayList = await restaurants.slice(9, 20);
     loading.style.display = 'none';
+
     todayList.forEach((restaurant) => {
       const todayItemElement = document.createElement('featured-item');
       todayItemElement.featured = restaurant;
